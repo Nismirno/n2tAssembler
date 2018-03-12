@@ -1,3 +1,4 @@
+
 from enum import Enum
 from src.translator import Translator
 from src.symtable import SymTable
@@ -36,7 +37,7 @@ class Parser:
             j = currentLine[i+1:].find('/')
             currentLine = (currentLine[:i] + currentLine[j+1:]).strip()
         if ('/*' in currentLine):
-            self.isComment = False
+            self.isComment = True
             return False
         if ('*/' in currentLine):
             self.isComment = False
